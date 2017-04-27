@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "es">
+	<head>
+		<meta charset="utf-8">
+		<title> Easygame </title>
+		<meta name="viewport" content="width-device-width, user-scalable=no initial-scale=1.0, minium-scale=1.0"/>
+		<link rel="stylesheet" href="estilos.css">
+	</head>
+	<script type="text/javascript" src = "JavaScript/javascript.js"></script>
+
+<body>
+<div class = "Todo">
+	<div class = "Titulo" ><img src = "Imagenes/portada.jpg"></div>
+	<div class="contenedorLogOut">
+		<form action="Perfil.html"><input class = "contenedorLogOut LogO" type="submit" value="Perfil"></form>
+		<form action="TutorialesPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Log Out"></form>
+	</div>
+
+	<div class="contenedor">
+		<form action="InicioAdmin.html"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
+		<form action="JuegosTodosAdmin.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
+		<form action="ConsolasAdmin.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
+		<form action="TutorialesAdmin.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
+		<form action="ContactoAdmin.html"><input class="Cont_menu" type = "submit" value =" Contacto "></form>
+	</div>
+
+	<hr size = 4 color = "#425816"/>
+
+	<article class = "ContenedorTutorial">
+		<div class = "ContenedorVideo">
+			<video  src="Videos/crash.mp4" width = "600px" height="400px" controls></video>	
+			<div class ="VideoInformacion">
+			<label class = "LabelVideo LabelTitulo">CRASH </label>
+			<label class= "LabelVideo LabelDescripcion">
+				Compilacion unica de estos videojuegos que salieron para la PSone hace ya mas de una decada pero que son atemporales porque son muy enganchadores y adictivos apesar de su antiguedad, se trata de Crash Bandicoot Gold Pack Edition, un todo en uno que contiene Crash Bandicoot 1, Crash Bandicoot 2: Cortex Strikes Back, Crash Bandicoot 3: Warped, Crash Team Racing y Crash Bash
+			</label>
+			</div>
+			<div class = "BotonesAdmin">
+				<input class="Contacto__submit"  id = "editar"type="submit" value="Editar" onClick = "editar();"> 
+				<input class="Contacto__submit"  id = "cancelar" type="submit" value="Cancelar" onClick = "cancelar();">
+			</div>
+		</div>
+		<br><br>
+		<div class = "BotonesAdmin">
+				<form action ="AgregarArticulo.html"><input class="Contacto__submit"  id = "agregar" type="submit" value="Agregar" onClick = "agregar();"> </form>
+				<input class="Contacto__submit"  id = "cancelar" type="submit" value="Cancelar" onClick = "cancelar2();">
+			</div>
+		</div>
+
+	<script type="text/javascript" src="JavaScript/jquery.min.js"></script><
+		<script type="text/javascript" >
+
+	function editar(){
+		$('#texto').attr('readonly','readonly');
+		$('#editar').attr('Value','GUARDAR');
+	}
+	function cancelar(){
+		$('#editar').attr('Value','EDITAR');
+	}
+	function agregar(){
+		$('#agregar').attr('Value','GUARDAR');	}
+	function cancelar2(){
+		$('#agregar').attr('Value','AGREGAR');
+		return false;
+	}
+	</script>
+		</div>
+	</article>
+
+	<hr size = 4 color = "#374A12" />
+
+	<div class = "Abajo">
+		<div class = "ContactoP">
+			<div class = "Datos Direccion"> Rio Jame #2185 Col. Consola, Jalisquito, Mejico</div>	
+			<div class = "Datos Correo"> easygame@prograinternet.com</div>	
+			<div class = "Datos Telefono"> (52) 331144558866</div>	
+		</div>
+		<div class = "ContactoRS RedesSociales">
+			<div class = "RS Facebook"> Facebook: EASY GAME</div>
+			<div class = "RS Youtube"> Youtube Easy Game Demos</div>
+			<div class = "RS Twitter">Twitter: @EasyGame</div>					 
+		</div>
+	</div>	
+</div>		
+	
+
+</body>
+</html>

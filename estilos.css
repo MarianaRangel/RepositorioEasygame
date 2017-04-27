@@ -1,0 +1,910 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+p{
+	color: #fff;
+	text-align: center;
+}
+
+body{
+	background: linear-gradient(	
+		#0D0D0D, black);
+		min-height:  100vh;
+	font-family: sans-serif;
+
+}
+a.open{
+	background-color: #414141;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 1.5em;
+	margin: none;
+	padding: none;
+	position: static;
+	width: auto;
+	height: auto;
+	text-decoration: none;
+	text-shadow: 2px 2px 0px #000;
+
+	-moz-transition:background-color 1s;
+	-webkit-transition:background-color 1s;
+	-o-transition:background-color 1s;
+	-ms-transition:background-color 1s;
+
+}
+
+a.open:hover{
+	background-color: #111;
+}
+
+
+section.modalDialog{
+	background-color: rgba(0,0,0,.5);
+	bottom: 0;
+	top:0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -2;
+	
+	-moz-transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+}
+
+section.modalDialog:target{
+	opacity: 1;
+}
+
+a.close{
+	background-color: #414141;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 22px;
+	position: absolute;
+	
+	text-align: center;
+	text-decoration: none;
+	width: 28px;
+}
+
+a.close{
+	background-color: #000;
+}
+
+section.modal{
+	background-color: #111;
+	box-shadow: 0px 0px 10px #000;
+	border-radius: 5px;
+	color: #fff;
+	margin: auto auto;
+	padding: 20px;
+	position: relative;
+	width: auto; 
+	height: auto;
+}
+
+
+h2{
+	color: #fff;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+
+.button{
+	justify-content: flex-start;
+	background:#20B2AA;
+	border-bottom: #000000;
+}
+h1{
+	color: white;
+	size: 72;
+}
+
+h2{
+	color: white;
+	text-align: center;
+}
+
+
+
+
+.CuerpoCarrito{
+	width: 100%;
+	height:  auto;
+	flex-direction: row;
+	display: flex;
+    margin left: 10px;
+    margin-right: 10px;
+}
+#precio{
+    color: white;
+}
+.ArticuloIndividual{
+    flex-direction: row;
+    justify-content: center;
+}
+.Compra{
+	width: 40%;
+    height:  auto;
+    justify-content:flex-start;
+    flex-direction: column;
+}
+.Articulos{
+	
+	width: 60%;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-wrap:wrap;
+    
+}
+
+#imagenCarrito{/*Tamaño d ecada imagen del carrito*/
+    width: 100px;
+    height: 120 px;
+}
+#Total{
+    font-size:  27px;
+    color: #fff;
+    margin: 10px 10px 10px 10px;
+ 
+    width:  150px;
+    height: 30px;
+}
+
+.InformacionContacto{
+	width: auto;
+	height: auto;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction:row; 
+	flex-wrap: wrap;
+	
+}
+.PerfilImagenEasygame{
+	margin: 2em 2em 2em 2em;
+	width: 50%;
+	height: auto;
+
+}
+
+.AcercaDe{
+	margin: 2em 2em 2em 2em;
+	width: 50%;
+	height: auto;   
+	color: white;
+
+}
+#texto{
+    background: black;
+    width: 100%;
+    height: 30px;;
+    color: white;
+}
+
+.ImagenJuegoEstrellas{
+	margin-left: 2em;
+	width: auto;
+	height: auto;
+
+}
+
+.Info{
+	width: auto;
+	height: auto;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction:row; 
+	flex-wrap: wrap;
+
+}
+.Label{
+	color: white;
+	text-transform:uppercase;
+
+}
+.LabelAgregar{
+	color: white;
+	background-size: white;
+	margin: 6em ;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 22px;
+
+}
+.LabelJuego{
+	 color:white;
+	 
+	 flex-direction: column;
+	 margin: 4em;
+	 text-align: center
+}
+.LabelVideo{
+	 color:white;
+	 
+	 flex-direction: column;
+	 margin: 4em;
+	 text-align: center
+}
+
+.ContJuegoIndividual{
+	width: auto;
+	height: auto;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: nowrap;	
+}
+.JuegoImagen{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+
+}
+.JuegoInformacion{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+	flex-direction: column;
+
+}
+.ConInformacion{
+	width: 300px;
+	height: 500px;
+	color:#fff; 
+	justify-content: center;
+
+}
+#mensaje{
+    font-size: 18px;
+    color: white;
+    font-style: italic;   
+    background: rgba(212,19,19,.6);
+}
+
+
+.Login-form{
+	width: 282px;
+	background: rgba(255,255,255,.2);
+	margin: auto;
+	padding: 2em 1em;
+}
+
+
+.Login-form__submit{
+	display: block;
+	width: 120px;
+	background: #007ACC;
+	color: #fff;
+	border: none;
+	line-height: 2.5;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	cursor: pointer;
+    border-radius: 15px;
+
+}
+.Login-form__submit:hover{
+	background: #1AC6FF;
+    transform : scale(1.25);
+    -moz-transform : scale(1.25);      /* Firefox */
+    -webkit-transform : scale(1.25);   /* Chrome - Safari */
+    -o-transform : scale(1.25);
+	}
+
+.Login-form__input{
+	display:  block;
+	width:  250px;
+	margin-bottom: 1em;
+	border: none;
+	line-height: 2.5;
+	padding: 0 1em;
+	height: 40px;
+}
+.Adquirir__submit{
+	display: block;
+	width: 140px;
+	background: #007ACC;
+	color: #fff;
+	border: none;
+	line-height: 2.5;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	cursor: pointer;
+    border-radius: 15px;
+
+
+}
+.Adquirir__submit:hover{
+	background: #1AC6FF;
+    transform : scale(1.25);
+    -moz-transform : scale(1.25);      /* Firefox */
+    -webkit-transform : scale(1.25);   /* Chrome - Safari */
+    -o-transform : scale(1.25);
+}
+.ContenedorTutorial{
+	width: auto;
+	height: auto;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:column; 
+	flex-wrap: nowrap;	
+    justify-content: center;
+}
+.ContenedorVideo{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+	justify-content: center;
+}
+
+
+.VideoInformacion{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+	flex-direction: column;
+    justify-content: center;
+
+}
+.Precio{
+	color: white;
+	font-size: 2em;
+
+}
+
+.ImagenEstrella1{
+	width: 170px;
+	height:auto;
+	justify-content: center;
+	margin-bottom: 2em;
+	flex-direction: column;
+	margin: 2em 2em 2em 2em;
+}
+.TodasImagenesEstrellas{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: wrap;
+	justify-content: center;
+	
+}
+.ImagenConsola{
+	margin-bottom: 2em;
+	width: 110%;
+	height:  70%;		
+}
+
+.Consola{
+	width:180px;
+	height:auto;
+	margin : 2em 2em 2em 2em;
+}
+.ContenedorConsola{
+	flex-direction:row;
+	margin: 2em 2em 2em 2em;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: wrap;
+    justify-content: center;
+	
+}
+
+/*------ESTRELLAS------*/
+.ec-stars-wrapper {
+	/* Espacio entre los inline-block (los hijos, los `a`) 
+	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+	font-size: 1;
+	/* Podríamos quitarlo, 
+		pero de esta manera (siempre que no le demos padding), 
+		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+		también se esté haciendo hover a alguna estrella */
+	display: inline-block;
+    width: 170px;
+}
+
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 15px;
+	font-size: 2rem;
+	
+	color: #888;/*color sin calificar*/
+}
+
+.ec-stars-wrapper:hover a {
+	color: #F9E106; /*color cuando calificas*/
+	transform : scale(1.25);
+    -moz-transform : scale(1.25);      /* Firefox */
+    -webkit-transform : scale(1.25);   /* Chrome - Safari */
+    -o-transform : scale(1.25);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888; /* va coloreando las estrellas selcecionadas*/
+}
+
+.Subtitulos{
+	color: white;
+	width: auto;
+	text-align: center;
+	text-anchor: 10px;
+	size: 32;
+}
+
+
+.Imagenes{
+	width: auto;
+	height: auto;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	
+	justify-content: center;
+}
+
+.ContenedorImagenesNoticias{
+	width:100%;
+	height: 100%;
+	margin: 2em;	
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction:row-reverse;
+}
+.Noticias{
+	width:25%;
+	height:auto;
+	flex-direction: column;
+	justify-content:center;
+}
+
+.TodosSlider{
+	width: 100%;
+}
+
+.Todo{
+	width: auto;
+	height: auto;
+}
+.YaRegistro{
+    font-size: 22px;
+    color: #1a75ff;
+    
+}
+
+
+/*------ galeria-------*/
+.galeria{
+	width: 100%;
+    height: auto;
+	margin: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	list-style: none;
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-around;
+    
+
+} 
+
+
+.galeria li{
+	margin: 5px;
+}
+.galeria img{
+	width: auto;
+	height: auto;
+}
+/*.galeria:hover img {
+	color: #F9E106; 
+	transform : scale(1.25);
+    -moz-transform : scale(1.25);     
+    -webkit-transform : scale(1.25);  
+    -o-transform : scale(1.25);
+}*/
+.galeriaDestacado{
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	list-style: none;
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-around;
+}
+.galeriaDestacado li{
+	margin: 5px;
+}
+.galeriaDestacado img{
+	width: auto;
+	height: auto;
+}/*
+.galeriaDestacado:hover img {
+	color: #F9E106; 
+	transform : scale(1.25);
+    -moz-transform : scale(1.25);  
+    -webkit-transform : scale(1.25);   
+    -o-transform : scale(1.25);
+}*/
+.galeriaVendidos{
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	list-style: none;
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-around;
+}
+.galeriaVendidos li{
+	margin: 5px;
+}
+.galeriaVendidos img{
+	width: auto;
+	height: auto;
+}
+/*.galeriaVendidos:hover img {
+	color: #F9E106;
+	transform : scale(1.25);
+    -moz-transform : scale(1.25);      
+    -webkit-transform : scale(1.25);   
+    -o-transform : scale(1.25);
+}
+/*-------estilo modal--------------*/
+.Modal{
+	display: none;
+
+}
+
+ .Modal:target{
+ 	display: block;
+ 	position:  fixed;
+ 	background: rgba(0,0,0,.8);
+ 	top: 0;
+ 	left: 0;
+ 	width:  100%;
+ 	height:  100%;
+ }
+ .Imagen{
+ 	width: 100%;
+ 	height: 50%;
+ 	display: flex; 
+ 	justify-content: center;
+ 	align-items: center;
+ }
+.Imagen a{
+	color: #fff;
+	font-size:  40px;
+	text-decoration: none;
+	margin: 0 10px;
+}
+.Imagen a:nth-child(2){
+	margin: 0;
+	height: 100;
+	flex-shrink: 2;
+}
+
+.Imagen img{
+	width: 500px;
+	height: 100%;
+	max-width: 100%;
+	border: 7px solid #fff;
+	box-sizing: border-box;
+}
+.Cerrar{
+	display: block;
+	width: 45px;
+	height: 45px;
+	margin: 100px auto;
+	text-align: center;
+	text-decoration:none;
+	font-size: 50px;
+	color: white;
+	padding: 5px;
+	border-radius: 100%;
+	line-height: 25px;
+}
+.ImagenInicio{
+    justify-content: center;
+    border: none;
+}
+
+
+/*-----------Estilo Administrador-------------------*/
+
+.BotonesAdmin{
+    justify-content: flex-end;
+    display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.Contacto__submit{
+    display: block;
+	width: 140px;
+	background: #007ACC;
+	color: #fff;
+	border: none;
+	line-height: 2.5;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	cursor: pointer;
+    border-radius: 15px;
+    margin: 11px;
+}
+.Contacto__submit:hover{
+	background: #1AC6FF;
+    transform : scale(1.25);
+    -moz-transform : scale(1.25);      /* Firefox */
+    -webkit-transform : scale(1.25);   /* Chrome - Safari */
+    -o-transform : scale(1.25);
+}
+
+/*----------------PERFIL------------------*/
+#respuestaImagen{
+	width: 500px;
+	height: 40px;
+	background: none;
+}
+.PerfilImagen{
+	margin:4em;
+	width: 400px;
+	height: auto;
+	background: none;
+
+}
+.contPerfilImagen{
+	margin:4em;
+	width: auto;
+	height: auto;
+	
+
+}
+.Perfil{
+	margin: 2em 2em 2em 2em;
+	width: auto;
+	height: auto;
+	flex-direction: column;
+
+}
+.btnPerfil{
+	justify-content: flex-end;
+    display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+
+
+/*----------------------AGREGAR ARTICULOS-----------------*/
+/*.BtnCargar{
+	display: block;
+	width: 100px;
+	background: #5385AB;
+	color: #fff;
+	border: none;
+	line-height: 2;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	cursor: pointer;
+    border-radius: 15px;
+
+}*/
+
+.Margen{
+	justify-content: flex-end;
+}
+.conAgregarArticulos{
+	width: 100%;
+	height: auto;
+	flex-direction:column; 
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+}
+
+.AgregarVideojuegos{
+	width: 100%;
+	height: 300px;
+}
+
+.AgregarArticulos{
+	width: 100%;
+	height: 300px;
+}
+.AgregarNoticias{
+	width: 100%;
+	height: 300px;
+}
+.AgregarNuevo{
+	width: 100%;
+	height: 300px;
+}
+.AgregarDestacado{
+	width: 100%;
+	height: 300px;
+}
+.AgregarMasVendido{
+	width: 100%;
+	height: 300px;
+}
+
+ 
+
+/*----------------Todo igual----------------------------*/
+.contenedorLogOut {
+	color: white;
+	background: none;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: wrap;
+
+	justify-content: flex-end; 
+	 margin-right: 1em;
+
+	 width: auto;
+	 height: auto;
+    font-size: 1.2em;
+}
+.LogO{
+	color: none;
+	display: block;
+	width: auto;
+	background: none;
+	border: none;
+	line-height: 2.5;
+	text-transform: capitalize;
+	font-size: 1em;
+	cursor: pointer;
+	color: #fff;
+}
+.LogO:hover{
+	background: rgba(255,255,255,.2);
+	
+}
+
+.Titulo{
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: wrap;
+
+	justify-content: center; 
+	align-items: baseline;
+	background-position: top
+}
+
+
+/*.ImgTitulo{
+	width: 1500px;
+	height: 350px;
+
+	flex-direction:row; 
+	justify-content: center;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex
+	background:blue;
+
+}*/
+
+.Cont_menu{
+	display: inline;
+	width: 170px;
+	height: ato;
+	background:none;
+	color: #fff;
+	border: none;
+	line-height: 2;
+	text-transform: capitalize;
+	font-size: 1.3em;
+	cursor: pointer;   
+
+}
+.Cont_menu:hover{
+	background: #858D97;
+}
+.contenedor{
+	width: auto;
+	height: auto;
+	background: linear-gradient(#A9A9A9, #3c3939);
+	min-height:  8vh;
+	padding:  2px;
+	margin-bottom: .5em;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-direction:row; 
+	flex-wrap: wrap;
+
+	justify-content: space-around; 
+
+	align-items: center;
+}
+
+
+.Abajo{
+	width: auto;
+	height: auto;
+	padding:  2px;
+	background: linear-gradient(	
+		#252424, black);
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	flex-wrap: wrap;
+
+	justify-content: center; 
+	align-items: baseline;
+
+}
+.ContactoP{
+	color: #fff;
+	margin: 10px;
+	height: auto;
+
+	display: inline-block;
+	width: auto;
+	text-align: center;
+	flex-direction: column;
+	}
+.ContactoRS{
+	flex-wrap: wrap;
+	color: #fff;
+	margin: 10px;
+	height: auto;
+	display: inline-block;
+	width: auto;
+	text-align: center;
+	flex-direction: column;
+}

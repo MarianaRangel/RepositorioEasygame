@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "es">
+	<head>
+		<meta charset="utf-8">
+		<title> Easygame </title>
+		<meta name="viewport" content="width-device-width, user-scalable=no initial-scale=1.0, minium-scale=1.0"/>
+		<link rel="stylesheet" href="estilos.css">
+	</head>
+	<script  src ="JavaScript/validar.js"></script>
+
+
+<body>
+<div class = "Todo">
+	<div class = "Titulo" ><img src = "Imagenes/portada.jpg"></div>
+	<div class="contenedorLogOut">
+		<form action="Perfil.html"><a href="Carrito.html"><img src = "Imagenes/carrito2.png" id = "CarritoLink" width = "40px" height = "40px"></a></form>
+		<form action="Perfil.html"><input class = "contenedorLogOut LogO" type="submit" value="Perfil"></form>
+		<form action="JuegosTodosPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Salir"></form>
+	</div>
+
+	<div class="contenedor">
+		<form action="InicioAdmin.html"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
+		<form action="JuegosTodosAdmin.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
+		<form action="ConsolasAdmin.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
+		<form action="TutorialesAdmin.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
+		<form action="ContactoAdmin.html"><input class="Cont_menu" type = "submit" value =" Contacto "></form>
+	</div>
+
+
+	<hr size = 4 color = "#425816"/>
+    <form action="Php/cargar.php" method="post" enctype="multipart/form-data">
+        <article class = "conAgregarArticulos">
+            <div class = "AgregarVideojuegos">
+                <label class = "LabelAgregar" >Agregar VideoJuego </label><br>
+                <input type = "file" name = "foto" class= "Margen"/>
+                <input type = "submit" class ="BtnCargar" value = "Cargar"/>
+            </div>
+            <div class = "AgregarArticulos" >
+                <label class = "LabelAgregar" >Agregar Articulos </label><br>
+                <input type = "file" name = " foto" id = "margen"/>
+                <input type = "submit" class ="BtnCargar" value = "Cargar"/>
+    
+            </div>
+             <div class = "AgregarNoticias" >
+                <label class = "LabelAgregar" >Agregar Noticias </label><br>
+                <input type = "file" name = " foto" id = "margen"/>
+                <input type = "submit" value = "Cargar"/>
+    
+            </div>
+             <div class = "AgregarNuevo" >
+                <label class = "LabelAgregar" >Agregar VideoJuego Nuevo </label><br>
+                <input type = "file" name = " foto" id = "margen"/>
+                <input type = "submit" value = "Cargar"/>
+    
+            </div>
+             <div class = "AgregarDestacado" >
+                <label class = "LabelAgregar" >Agregar Destacado </label><br>
+                <input type = "file" name = " foto" id = "margen"/>
+                <input type = "submit" value = "Cargar"/>
+    
+            </div>
+             <div class = "AgregarMasVendido" >
+                <label class = "LabelAgregar" >Agregar Mas Vendido </label><br>
+                <input type = "file" name = " foto" id = "margen"/>
+                <input type = "submit" value = "Cargar"/>
+    
+            </div>
+        </article>
+    </form>
+	<hr size = 4 color = "#374A12"/>
+
+	<div class = "Abajo">
+		<div class = "ContactoP">
+			<div class = "Datos Direccion"> Rio Jame #2185 Col. Consola, Jalisquito, Mejico</div>	
+			<div class = "Datos Correo"> easygame@prograinternet.com</div>	
+			<div class = "Datos Telefono"> (52) 331144558866</div>	
+		</div>
+		<div class = "ContactoRS RedesSociales">
+			<div class = "RS Facebook"> Facebook: EASY GAME</div>
+			<div class = "RS Youtube"> Youtube Easy Game Demos</div>
+			<div class = "RS Twitter">Twitter: @EasyGame</div>					 
+		</div>
+	</div>
+</div>	
+
+</body>
+</html>
