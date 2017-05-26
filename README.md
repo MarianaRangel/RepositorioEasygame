@@ -17,3 +17,7 @@ Existira en la página principal un cuadro de noticias, donde en ella muestren l
 Habra una pestaña en la cual esté la información necesaria para que puedan contactarnos como dirección, teléfono y correo electrónico.
 
 En la pestaña de videojuegos se mostrará una imagen del juego, asi como una breve descripción, el precio y algunos comentarios que los usuarios hayan hecho al respecto.
+
+
+Link
+http://easygameofficial.hol.es/
