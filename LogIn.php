@@ -25,16 +25,63 @@
 
 	<h2>Ingreso</h2>
 
-	<form action = "conexion.php" class  = " Login-form" onsubmit= "return LogIn();">
+	<form action = "" class  = " Login-form" onsubmit= "return LogIn();">
 		<div class = "conRegistro" >
 			
 			<input class = "Login-form__input" type="text" id = "correo" name = "correo" placeholder = "&#128272; Correo">	
 			<input class = "Login-form__input" type="password" id = "password" name = "password" placeholder = "&#128272; Contraseña">
 			<div class = "divMensaje" type="text" id = "mensaje"></div>
 			<br>
-            <form action="Inicio.php"><input class="Login-form__submit" type="submit" value="Entrar" href = "Inicio.php"></form>
+            <form action="Inicio.html"><input class="Login-form__submit" type="submit" value="Entrar" ></form>
+<?php
+			session_start();
+		 
+	require("conexion.php");
+	//		include 'conexion.php';
+
+	$correo=$_POST['correo'];
+	$pass=$_POST['password'];
 
 
+	//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
+	$sql2=mysqli_query($mysqli,"SELECT * FROM Usuario WHERE Correo ='$correo'");
+	if($f2=mysqli_fetch_assoc($sql2)){
+		if($pass==$f2['easygame']){/////pasadmin
+			$_SESSION['id']=$f2['idUsuario'];
+			$_SESSION['nombre']=$f2['Nombre'];
+			
+
+			echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
+			echo "<script>location.href='InicioAdmin.html'</script>";
+		
+		}
+		else{
+			echo '<script>alert("PFFF")</script> ';
+		}
+	}
+
+/*
+	$sql=mysqli_query($mysqli,"SELECT * FROM Usuario WHERE Correo ='$correo'");
+	if($f=mysqli_fetch_assoc($sql)){
+		if($pass==$f['Contraseña']){
+			$_SESSION['id']=$f2['idUsuario'];
+			$_SESSION['nombre']=$f2['Nombre'];
+
+			header("Location: Inicio.php");
+		}else{
+			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
+		
+			echo "<script>location.href='LogIn.php'</script>";
+		}
+	}else{
+		
+		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
+		
+		echo "<script>location.href='LogIn.php'</script>";	
+
+	}*/
+
+?>
 		</div>
 	</form>	
 

@@ -1,3 +1,4 @@
+
 *{
 	margin:0;
 	padding: 0;
@@ -7,13 +8,16 @@ p{
 	color: #fff;
 	text-align: center;
 }
+span{
+	color: white;
+	font-size: 23px;
+}
 
 body{
-	background: linear-gradient(	
-		#0D0D0D, black);
+	background: linear-gradient(
+		#D0CDCD, black);
 		min-height:  100vh;
 	font-family: sans-serif;
-
 }
 a.open{
 	background-color: #414141;
@@ -114,8 +118,13 @@ h2{
 }
 
 
-
-
+/*-----------------------DETALLES--------------------------*/
+.Individual{
+	width: 900px;
+	height: auto;
+	justify-content: center;
+}
+/*---------------------------------------------------------*/
 .CuerpoCarrito{
 	width: 100%;
 	height:  auto;
@@ -211,21 +220,10 @@ h2{
 	display: flex;
 	flex-direction:row; 
 	flex-wrap: wrap;
-
 }
 .Label{
 	color: white;
 	text-transform:uppercase;
-
-}
-.LabelAgregar{
-	color: white;
-	background-size: white;
-	margin: 6em ;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	text-align: center;
-	font-size: 22px;
 
 }
 .LabelJuego{
@@ -334,6 +332,20 @@ h2{
 
 
 }
+.Boton{
+	display: block;
+	width: 140px;
+	background: #007ACC;
+	color: #fff;
+	border: none;
+	line-height: 2.5;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+
+}
 .Adquirir__submit:hover{
 	background: #1AC6FF;
     transform : scale(1.25);
@@ -376,7 +388,7 @@ h2{
 }
 
 .ImagenEstrella1{
-	width: 170px;
+	width: auto;
 	height:auto;
 	justify-content: center;
 	margin-bottom: 2em;
@@ -625,6 +637,25 @@ h2{
 	border: 7px solid #fff;
 	box-sizing: border-box;
 }
+.producto{
+	width: auto;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+
+}
+
+.productoJuegos{
+	width: auto;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1%;
+	margin-top: 1%;
+
+}
 .Cerrar{
 	display: block;
 	width: 45px;
@@ -641,6 +672,7 @@ h2{
 .ImagenInicio{
     justify-content: center;
     border: none;
+
 }
 
 
@@ -685,8 +717,8 @@ h2{
 .PerfilImagen{
 	margin:4em;
 	width: 400px;
-	height: auto;
-	background: none;
+	height: 400px;
+	
 
 }
 .contPerfilImagen{
@@ -715,7 +747,7 @@ h2{
 
 
 /*----------------------AGREGAR ARTICULOS-----------------*/
-/*.BtnCargar{
+.BtnCargar{
 	display: block;
 	width: 100px;
 	background: #5385AB;
@@ -727,7 +759,23 @@ h2{
 	cursor: pointer;
     border-radius: 15px;
 
-}*/
+}
+
+#desJue{
+	width: 282px;
+}
+.LabelAgregar{
+	color: white;
+	background-size: white;
+	margin: 6em ;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 22px;
+	height: 100px;
+	
+
+}
 
 .Margen{
 	justify-content: flex-end;
@@ -744,28 +792,28 @@ h2{
 
 .AgregarVideojuegos{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 
 .AgregarArticulos{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 .AgregarNoticias{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 .AgregarNuevo{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 .AgregarDestacado{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 .AgregarMasVendido{
 	width: 100%;
-	height: 300px;
+	height: auto;
 }
 
  

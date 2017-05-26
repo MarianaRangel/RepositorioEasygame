@@ -16,10 +16,10 @@
 	<div class="contenedorLogOut">
 		<form action="Perfil.html"><a href="Carrito.html"><img src = "Imagenes/carrito2.png" id = "CarritoLink" width = "40px" height = "40px"></a></form>
 		<form action="Perfil.html"><input class = "contenedorLogOut LogO" type="submit" value="Perfil"></form>
-		<form action="InicioPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Log Out"></form>
+		<form action="InicioPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Salir"></form>
 	</div>	
 	<div class="contenedor">
-		<form action="Inicio.html"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
+		<form action="Inicio.php"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
 		<form action="JuegosTodos.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
 		<form action="Consolas.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
 		<form action="Tutoriales.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
@@ -47,30 +47,45 @@
 		
 		
 		<div  class =  "TodosSlider">
-		<div class = "ImagenInicio" ><img src = "Imagenes/nuevo.jpg" width="100%" height="190px" ></div>
+		<!--<div class = "ImagenInicio" ><img src = "Imagenes/nuevo.jpg" width="100%" height="190px" ></div>-->
+			<section>
+		
+	<?php
+		include 'conexion.php';
+		$re=mysql_query("select * from Videojuego")or die(mysql_error());
+		while ($f=mysql_fetch_array($re)) {
+		?>
 
-			<ul class = "galeria">
-				<li><a href="#img1" class = "ImagenJuego"><img src= "Imagenes/1.jpg"> </a></li>
-				<li><a href="#img2" class = "ImagenJuego"><img src= "Imagenes/2.jpg"> </a></li>
-				<li><a href="#img3" class = "ImagenJuego"><img src= "Imagenes/3.jpg"> </a></li>
-				<li><a href="#img4" class = "ImagenJuego"><img src= "Imagenes/4.jpg"> </a></li>
 
-			</ul>
+			<div class="producto">
+			<center>
+				<img src="./Imagenes/<?php echo $f['Imagen'];?>"><br>
+				<span><?php echo $f['IdVideojuego'];?></span><br>
+				<a href="./detalles.php?IdVideojuego=<?php echo $f['IdVideojuego'];?>">ver</a>
+			</center>
+		</div>
+	<?php
+		}
+	?>
+		
+		
 
-		<div class ="Modal" id="img1">
+		
+	</section>
+
+		<!--<div class ="Modal" id="img1">
 		<div class = "Imagen">
 				<a href= "#img4"> &#60; </a>
 				<a href= "JuegoIndividual_1.html"><img src="Imagenes/1.jpg" > </a>
 				<a href= "#img2">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
-		</div>
+		</div>-->
 
-
-		<div class ="Modal" id="img2">
+		<!--<div class ="Modal" id="img2">
 			<div class = "Imagen">
 				<a href= "#img1"> &#60; </a>
-				<a href= "JuegoIndividual_2.html""><img src="Imagenes/2.jpg"> </a>
+				<a href= "JuegoIndividual_2.html"><img src="Imagenes/2.jpg"> </a>
 				<a href= "#img3">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
@@ -79,7 +94,7 @@
 		<div class ="Modal" id="img3">
 			<div class = "#Imagen">
 				<a href= "#img2"> &#60; </a>
-				<a href= "JuegoIndividual_3.html""><img src="Imagenes/3.jpg"> </a>
+				<a href= "JuegoIndividual_3.html"><img src="Imagenes/3.jpg"> </a>
 				<a href= "#img4">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
@@ -88,7 +103,7 @@
 		<div class ="Modal" id="img4">
 			<div class = "Imagen">
 				<a href= "#img3"> &#60; </a>
-				<a href= "JuegoIndividual_4.html""><img src="Imagenes/4.jpg"> </a>
+				<a href= "JuegoIndividual_4.html"><img src="Imagenes/4.jpg"> </a>
 				<a href= "#img1">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
@@ -206,7 +221,7 @@
 			</div>
 			<a class ="Cerrar" href="">x</a>
 		</div>
-
+-->
 
 		</div>
 	</article>

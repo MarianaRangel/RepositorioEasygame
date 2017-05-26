@@ -19,7 +19,7 @@
 
 	<div class="contenedor">
 		<form action="Inicio.php"><input class="Cont_menu" type = "submit" value =" Inicio "></form>
-		<form action="JuegosTodos.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
+		<form action="JuegosTodos.php"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
 		<form action="Consolas.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
 		<form action="Tutoriales.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
 		<form action="Contacto.html"><input class="Cont_menu" type = "submit" value =" Contacto "></form>
@@ -27,35 +27,95 @@
 
 	<hr size = 4 color = "#425816"/>
 
+
+
 	<article class = "TodasImagenesEstrellas">
-		<div class = "ImagenEstrella1">
-			<div class = "ImagenEstrella">
+	<div class = "ImagenEstrella1">
+
+
+
+
+
+	<?php
+		include 'conexion.php';
+				
+		$conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Fallo de conexión: " . $conn->connect_error);
+    } 
+  $sql = "SELECT *FROM Videojuego";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "Imagen:  +" . $row["Imagen"]. "<br> Código: " . $row["IdVideojuego"]. " Nombre: " . $row["Nombre"]. "<br>" . "Precio: " . $row["Precio"]. "<br>" . "Descripcion: " . $row["Descripcion"]. "<br>" .
+            "Consola: " . $row["Consola"]. "Imagen: " ."<br>" . $row["Imagen"]. "<br><br>";
+        }
+    } else {
+        echo "0 resultados";
+    }
+    
+    $conn->close();
+?>
+			<!--<div class = "ImagenEstrella"º
 				<img src="Imagenes/1.jpg">
-			</div>
-			
-			<!-- <fieldset class="val-fieldset"><legend>Calificación:</legend><span class="valoracion val-50"></span></fieldset>-->
-			
-	<!-- ESTELLAS-->
-			<div class="ec-stars-wrapper">
+			</div>-->
+						
+		
+		<!--function getFruit($conn) {
+    $sql = 'SELECT IdVideojuego, Nombre,Precio FROM Videojuego';
+    foreach ($conn->query($sql) as $row) {
+        print $row['IdVideojuego'] . "\t";
+        print $row['Nombre'] . "\t";
+        print $row['Precio'] . "\n";
+	}
+		}
+		
+		?>-->
+<!---->
+		
+		<!--<div class="producto">
+			<center>
+				<img src="./Imagenes/</span><br>
+				<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
 				<a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
 				<a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
 				<a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+				<span>Precio: $//</span><br><br>
 			</div>
-			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
+					<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>DeadRising <br><br> $450.00 </Label>
-
-			<input class="Adquirir__submit" type="submit" value="Adquirir">
+			<a  class ="Boton" href="./Carrito.php?IdVideojuego=">Comprar</a>
+			
+		
+				
+			</center>
+		</div>-->
+		
+	
+	
 		</div>
+
+
+			<!--<Label class = "Precio">DeadRising <br><br> $450.00 </Label>-->
+
+			<!--<input class="Adquirir__submit" type="submit" value="Adquirir">-->
+						
+		
+		
+
+
+
+<!--
 
 		<div class = "ImagenEstrella1">
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/2.jpg">
 			</div>
 
-	<!-- ESTELLAS-->
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -65,7 +125,7 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>FarCry 3 <br><br> $420.00 </Label>
+			<Label class = "Precio">FarCry 3 <br><br> $420.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
 		</div>
@@ -74,7 +134,7 @@
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/3.jpg">
 			</div>
-	<!-- ESTELLAS-->
+	
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -84,7 +144,7 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>Halo Anniversary <br> $2500.00 </Label>
+			<Label class = "Precio">Halo Anniversary <br> $2500.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
 		</div>
@@ -93,7 +153,7 @@
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/6.jpg">
 			</div>
-	<!-- ESTELLAS-->
+	
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -103,7 +163,7 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>Batman <br><br> $350.00 </Label>
+			<Label class = "Precio">Batman <br><br> $350.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
 		</div>
@@ -112,7 +172,7 @@
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/9.jpg">
 			</div>
-	<!-- ESTELLAS-->
+	
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -122,7 +182,7 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>Fifa17 <br><br> $300.00 </Label>
+			<Label class = "Precio">Fifa17 <br><br> $300.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
 		</div>
@@ -131,7 +191,7 @@
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/10.jpg">
 			</div>
-	<!-- ESTELLAS-->
+	
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -141,7 +201,7 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>Dark Soul III<br>$500.00 </Label>
+			<Label class = "Precio">Dark Soul III<br>$500.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
 		</div>
@@ -150,7 +210,7 @@
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/12.jpg">
 			</div>
-	<!-- ESTELLAS-->
+	
 			<div class="ec-stars-wrapper">
 				<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 				<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -160,10 +220,10 @@
 			</div>
 			<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
 
-			<Label class = "Precio"><br>Assassins creed unity <br><br> $350.00 </Label>
+			<Label class = "Precio">Assassins creed unity <br><br> $350.00 </Label>
 
 			<input class="Adquirir__submit" type="submit" value="Adquirir">
-		</div>
+		</div>-->
 
 	</article>
 

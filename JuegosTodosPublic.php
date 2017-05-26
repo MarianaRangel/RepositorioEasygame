@@ -14,11 +14,11 @@
 	<div class="contenedorLogOut">
 		<form action="Perfil.html"><a href="LogIn.html"><img src = "Imagenes/carrito2.png" id = "CarritoLink" width = "40px" height = "40px"></a></form>
 		<form action="Formulario.php"><input class = "contenedorLogOut LogO" type="submit" value="Registrarse"></form>
-		<form action="LogIn.html"><input class = "contenedorLogOut LogO" type="submit" value="Ingresar"></form>
+		<form action="LogIn.html"><input class = "contenedorLogOut LogO" type="submit" value="Salir"></form>
 	</div>
 
 	<div class="contenedor">
-		<form action="InicioPublic.html"><input class="Cont_menu" type = "submit" value =" Inicio "></form>
+		<form action="InicioPublic.php"><input class="Cont_menu" type = "submit" value =" Inicio "></form>
 		<form action="JuegosTodosPublic.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
 		<form action="ConsolasPublic.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
 		<form action="TutorialesPublic.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
@@ -28,7 +28,30 @@
 	<hr size = 4 color = "#425816"/>
 
 	<article class = "TodasImagenesEstrellas">
-		<div class = "ImagenEstrella1">
+
+	<?php
+		include 'conexion.php';
+				
+		$conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Fallo de conexión: " . $conn->connect_error);
+    } 
+  $sql = "SELECT *FROM Videojuego";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "Imagen:  +" . $row["Imagen"]. "<br> Código: " . $row["IdVideojuego"]. " Nombre: " . $row["Nombre"]. "<br>" . "Precio: " . $row["Precio"]. "<br>" . "Descripcion: " . $row["Descripcion"]. "<br>" .
+            "Consola: " . $row["Consola"]. "Imagen: " ."<br>" . $row["Imagen"]. "<br><br>";
+        }
+    } else {
+        echo "0 resultados";
+    }
+    
+    $conn->close();
+?>
+		<!--<div class = "ImagenEstrella1">
 			<div class = "ImagenEstrella">
 				<img src="Imagenes/1.jpg">
 			</div>
@@ -83,7 +106,7 @@
 				<img src="Imagenes/12.jpg">
 			</div>
 		<Label class = "Precio">Assassins creed unity <br><br> $350.00 </Label>
-		</div>
+		</div>-->
 
 	</article>
 	<p>* Para poder adquirir un articulo de Easygame es necesario que se registre</p>

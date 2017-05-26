@@ -35,6 +35,7 @@
 
 	<hr size = 4 color = "#425816"/>
 
+	<form action = "guardar.php" method="post">
 	<article class = "Info">
 	<div class = "PerfilImagen">
 			<input type="file" id="files" name="files[]" />
@@ -53,6 +54,7 @@
 			<label class = "Label"> Contraeña</label>
 			<input class = "Login-form__input" type="password" id = "password" name = "password" placeholder = "Contraseña">
 			<br>
+				
 			<input class="Login-form__submit" type="submit" value="Guardar">
 		</div>
 		
@@ -87,6 +89,34 @@
 		<script type="text/javascript" >
 			function cambiar(){
 				$('#editar').attr('Value','GUARDAR');
+				<?php
+					include 'conexion.php'	;
+					
+					$conn = new mysqli($servername, $username, $password, $dbname);
+
+					if ($conn->connect_error) {
+						die("Fallo de conexión: " . $conn->connect_error);
+					} 
+
+					$idusuario = $_GET["IdUsuario"];
+					$nom = $_GET["Nombre"];
+					$apellido = $_GET["Apellido"];
+					$cor = $_GET["Correo"];
+					$cont = $_GET["Contraseña"];
+					
+
+
+					$sql = "INSERT INTO Videojuego (IdUsuario,Nombre,Apellido,Correo,Contraseña)
+					VALUES ($idusuario, $nom, $apellido, $cor, $cont)";
+
+					if ($conn->query($sql) === TRUE) {
+						echo "Nuevo registro creado";
+					} else {
+						echo "Error: " . $sql . "<br>" . $conn->error;
+					}
+
+					$conn->close();
+				?>
 			}
 			function cancelar(){
 				$('#cancelar').attr('Value','EDITAR')
@@ -95,6 +125,9 @@
 
 
 	</article>
+				
+		
+	</form>
 
 	<hr size = 4 color = "#374A12" />
 

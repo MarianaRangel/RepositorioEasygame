@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang = "es">
 	<head>
@@ -5,9 +6,17 @@
 		<title> Easygame </title>
 		<meta name="viewport" content="width-device-width, user-scalable=no initial-scale=1.0, minium-scale=1.0"/>
 		<link rel="stylesheet" href="estilos.css">
-	</head>
-	<script  src ="JavaScript/validar.js"></script>
+		<script  src ="JavaScript/validar.js"></script>
 
+		<style>
+          .thumb {
+            height: 300px;
+            border: 1px solid #000;
+            margin: 10px 5px 0 0;
+          }
+        </style>
+	</head>
+	
 
 <body>
 <div class = "Todo">
@@ -31,43 +40,92 @@
     <form action="Php/cargar.php" method="post" enctype="multipart/form-data">
         <article class = "conAgregarArticulos">
             <div class = "AgregarVideojuegos">
-                <label class = "LabelAgregar" >Agregar VideoJuego </label><br>
-                <input type = "file" name = "foto" class= "Margen"/>
+               <br> <label class = "LabelAgregar" >Agregar VideoJuego </label><br>
+			
+                <input type="file"  id="files" name="files[]" multiple />
+				<br />
+				<output id="list"></output>
+				
+				<input type = "text" id = "nombJue" placeholder = "Nombre">
+				<input type = "text" id = "desJue" placeholder = "Descripcion">
+         
                 <input type = "submit" class ="BtnCargar" value = "Cargar"/>
             </div>
             <div class = "AgregarArticulos" >
                 <label class = "LabelAgregar" >Agregar Articulos </label><br>
-                <input type = "file" name = " foto" id = "margen"/>
+				<input type="file" id="files" name="files[]" />
+				<br />
+				<output id="list"></output>
+         
                 <input type = "submit" class ="BtnCargar" value = "Cargar"/>
     
             </div>
              <div class = "AgregarNoticias" >
                 <label class = "LabelAgregar" >Agregar Noticias </label><br>
-                <input type = "file" name = " foto" id = "margen"/>
-                <input type = "submit" value = "Cargar"/>
+                <input type="file" id="files" name="files[]" />
+				<br />
+				<output id="list"></output>
+                <input class = "BtnCargar" type = "submit" value = "Cargar"/>
     
             </div>
              <div class = "AgregarNuevo" >
                 <label class = "LabelAgregar" >Agregar VideoJuego Nuevo </label><br>
-                <input type = "file" name = " foto" id = "margen"/>
-                <input type = "submit" value = "Cargar"/>
+                <input type="file" id="files" name="files[]" />
+				<br />
+				<output id="list"></output>
+                <input class = "BtnCargar" type = "submit" value = "Cargar"/>
     
             </div>
              <div class = "AgregarDestacado" >
                 <label class = "LabelAgregar" >Agregar Destacado </label><br>
-                <input type = "file" name = " foto" id = "margen"/>
-                <input type = "submit" value = "Cargar"/>
+                <input type="file" id="files" name="files[]" />
+				<br />
+				<output id="list"></output>
+                <input  class = "BtnCargar" type = "submit" value = "Cargar"/>
     
             </div>
              <div class = "AgregarMasVendido" >
                 <label class = "LabelAgregar" >Agregar Mas Vendido </label><br>
-                <input type = "file" name = " foto" id = "margen"/>
-                <input type = "submit" value = "Cargar"/>
+                <input type="file" id="files" name="files[]" />
+				<br />
+				<output id="list"></output>
+                <input class = "BtnCargar" type = "submit" value = "Cargar"/>
     
             </div>
+			
+			 <script>
+              function archivo(evt) {
+                  var files = evt.target.files; // FileList object
+             
+                  // Obtenemos la imagen del campo "file".
+                  for (var i = 0, f; f = files[i]; i++) {
+                    //Solo admitimos imágenes.
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+             
+                    var reader = new FileReader();
+             
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                          // Insertamos la imagen
+                         document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                        };
+                    })(f);
+             
+                    reader.readAsDataURL(f);
+                  }
+              }
+             
+              document.getElementById('files').addEventListener('change', archivo, false);
+      </script>
+			
         </article>
     </form>
+	
 	<hr size = 4 color = "#374A12"/>
+	
+	
 
 	<div class = "Abajo">
 		<div class = "ContactoP">

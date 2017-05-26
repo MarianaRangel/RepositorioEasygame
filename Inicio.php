@@ -14,15 +14,16 @@
 <div class = "Todo">
 	<div class = "Titulo" ><img id = "imagen"  src = "Imagenes/portada.jpg"></div>
 	<div class="contenedorLogOut">
-			<form action="Perfil.html"><input class = "contenedorLogOut LogO" type="submit" value="Perfil"></form>
-			<form action="InicioPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Salir"></form>
+		<form action="Perfil.html"><a href="Carrito.html"><img src = "Imagenes/carrito2.png" id = "CarritoLink" width = "40px" height = "40px"></a></form>
+		<form action="Perfil.html"><input class = "contenedorLogOut LogO" type="submit" value="Perfil"></form>
+		<form action="InicioPublic.html"><input class = "contenedorLogOut LogO" type="submit" value="Salir"></form>
 	</div>	
 	<div class="contenedor">
-		<form action="InicioAdmin.html"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
-		<form action="JuegosTodosAdmin.html"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
-		<form action="ConsolasAdmin.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
-		<form action="TutorialesAdmin.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
-		<form action="ContactoAdmin.html"><input class="Cont_menu" type = "submit" value =" Contacto "></form>
+		<form action="Inicio.php"><input class="Cont_menu" type = "submit" value =" Inicio " id = "abc"></form>
+		<form action="JuegosTodos.php"><input class="Cont_menu" type = "submit" value =" Juegos "></form>
+		<form action="Consolas.html"><input class="Cont_menu" type = "submit" value =" Consolas "></form>
+		<form action="Tutoriales.html"><input class="Cont_menu" type = "submit" value =" Tutoriales "></form>
+		<form action="Contacto.html"><input class="Cont_menu" type = "submit" value =" Contacto "></form>
 	</div>
 	<hr size = 4 color = "#425816"/>
 
@@ -44,34 +45,61 @@
 			</div> </h2>
 		</div>
 		
-	
+		
 		<div  class =  "TodosSlider">
-		<div class = "ImagenInicio" ><img src = "Imagenes/nuevo.jpg" width="100%" height="190px" ></div>
-		<ul class = "galeria">
-				<li><a href="#img1" class = "ImagenJuego"><img src= "Imagenes/1.jpg" onmouseover='zoom();'> </a></li>
-				<li><a href="#img2" class = "ImagenJuego"><img src= "Imagenes/2.jpg"> </a></li>
-				<li><a href="#img4" class = "ImagenJuego"><img src= "Imagenes/4.jpg"> </a></li>
+		<!--<div class = "ImagenInicio" ><img src = "Imagenes/nuevo.jpg" width="100%" height="190px" ></div>-->
+			<section>
+		
+	<?php
+		include 'conexion.php';
+				
+		$conn = new mysqli($servername, $username, $password, $dbname);
 
-			</ul>
-			<br><br>	
-			<div class = "BotonesAdmin">
-				<form action ="AgregarArticulo.html"><input class="Contacto__submit"  id = "agregar" type="submit" value="Agregar" onClick = "agregar();"> </form>
-				<input class="Contacto__submit"  id = "cancelar" type="submit" value="Cancelar" onClick = "cancelar();">
-			</div>	
-		<div class ="Modal" id="img1">
+    if ($conn->connect_error) {
+        die("Fallo de conexión: " . $conn->connect_error);
+    } 
+  $sql = "SELECT *FROM Videojuego";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "Imagen:  +" . $row["Imagen"]. "<br> Código: " . $row["IdVideojuego"]. " Nombre: " . $row["Nombre"]. "<br>" . "Precio: " . $row["Precio"]. "<br>" . "Descripcion: " . $row["Descripcion"]. "<br>" .
+            "Consola: " . $row["Consola"]. "Imagen: " ."<br>" . $row["Imagen"]. "<br><br>";
+        }
+    } else {
+        echo "0 resultados";
+    }
+    
+    $conn->close();
+?>
+	
+		
+
+		
+	</section>
+
+		<!--<div class ="Modal" id="img1">
 		<div class = "Imagen">
 				<a href= "#img4"> &#60; </a>
 				<a href= "JuegoIndividual_1.html"><img src="Imagenes/1.jpg" > </a>
 				<a href= "#img2">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
-		</div>
+		</div>-->
 
-
-		<div class ="Modal" id="img2">
+		<!--<div class ="Modal" id="img2">
 			<div class = "Imagen">
 				<a href= "#img1"> &#60; </a>
-				<a href= "JuegoIndividual_2.html""><img src="Imagenes/2.jpg"> </a>
+				<a href= "JuegoIndividual_2.html"><img src="Imagenes/2.jpg"> </a>
+				<a href= "#img3">></a>
+			</div>
+			<a class ="Cerrar" href="">x</a>
+		</div>
+
+		<div class ="Modal" id="img3">
+			<div class = "#Imagen">
+				<a href= "#img2"> &#60; </a>
+				<a href= "JuegoIndividual_3.html"><img src="Imagenes/3.jpg"> </a>
 				<a href= "#img4">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
@@ -79,8 +107,8 @@
 
 		<div class ="Modal" id="img4">
 			<div class = "Imagen">
-				<a href= "#img2"> &#60; </a>
-				<a href= "JuegoIndividual_4.html""><img src="Imagenes/4.jpg"> </a>
+				<a href= "#img3"> &#60; </a>
+				<a href= "JuegoIndividual_4.html"><img src="Imagenes/4.jpg"> </a>
 				<a href= "#img1">></a>
 			</div>
 			<a class ="Cerrar" href="">x</a>
@@ -99,11 +127,6 @@
 				<li><a href="#img7" class = "ImagenJuego"><img src= "Imagenes/7.jpg"> </a></li>
 
 			</ul>
-			<br><br>	
-			<div class = "BotonesAdmin">
-				<form action ="AgregarArticulo.html"><input class="Contacto__submit"  id = "agregar" type="submit" value="Agregar" onClick = "agregar();"> </form>
-				<input class="Contacto__submit"  id = "cancelar" type="submit" value="Cancelar" onClick = "cancelar();">
-			</div>	
 
 		<div class ="Modal" id="img6">
 			<div class = "Imagen">
@@ -167,11 +190,6 @@
 				<li><a href="#img5" class = "ImagenJuego"><img src= "Imagenes/5.jpg"> </a></li>
 
 			</ul>
-			<br><br>	
-			<div class = "BotonesAdmin">
-				<form action ="AgregarArticulo.html"><input class="Contacto__submit"  id = "agregar" type="submit" value="Agregar" onClick = "agregar();"> </form>
-				<input class="Contacto__submit"  id = "cancelar" type="submit" value="Cancelar" onClick = "cancelar();">
-			</div>	
 
 		<div class ="Modal" id="img14">
 			<div class = "Imagen">
@@ -208,21 +226,12 @@
 			</div>
 			<a class ="Cerrar" href="">x</a>
 		</div>
-
+-->
 
 		</div>
-
 	</article>
 	
-	<script type="text/javascript" src="JavaScript/jquery.min.js"></script>
-	<script type="text/javascript" >
-		function agregar(){
-		$('#agregar').attr('Value','GUARDAR');	}
-	function cancelar2(){
-		$('#agregar').attr('Value','AGREGAR');
-		return false;
-	}
-	</script>
+	
 
 	<hr size = 4 color = "#374A12" />
 
