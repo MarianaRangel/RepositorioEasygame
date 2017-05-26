@@ -21,3 +21,7 @@ En la pestaña de videojuegos se mostrará una imagen del juego, asi como una br
 
 Link
 http://easygameofficial.hol.es/
+
+Contribuidores
+Martinez Campos Arturo
+Rangel Gonzalez Mariana Paola
